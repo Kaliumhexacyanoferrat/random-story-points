@@ -27,7 +27,7 @@ jobs:
       run: dotnet tool restore
     - name: Begin scan
       if: env.SONAR_TOKEN != null && env.SONAR_TOKEN != ''
-      run: dotnet sonarscanner begin /o:"kaliumhexacyanoferrat" /k:"random-story-points" /d:sonar.login="$SONAR_TOKEN" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.branch.name="${GITHUB_REF##*/}" 
+      run: dotnet sonarscanner begin /k:"Kaliumhexacyanoferrat_random-story-points" /o:"kaliumhexacyanoferrat" /d:sonar.login="$SONAR_TOKEN" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.branch.name="${GITHUB_REF##*/}" 
     - name: Build project
       run: dotnet build Project.sln -c Release
     - name: End scan
