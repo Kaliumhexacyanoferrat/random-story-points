@@ -1,0 +1,61 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{ content.meta.title }}</title>
+
+    {{ if content.meta.description }}
+    <meta name="description" content="{{ content.meta.description }}" />
+    {{ end }}
+
+    {{~ for style in styles ~}}
+    <link rel="stylesheet" href="{{ route style.path }}" />
+    {{~ end ~}}
+
+</head>
+
+<body>
+
+    <div class="header box">
+
+        <h1>Random Estimation</h1>
+
+        <h2>{{ content.meta.title }}</h2>
+
+    </div>
+
+    <div class="content box">
+
+        {{ content.content }}
+
+    </div>     
+
+    <div class="footer box">
+
+        {{~ for item in menu ~}}
+
+            {{ active = ( request.target.path | string.contains item.path ) || ( ( route item.path ) == "./" && ( request.target.path | string.ends_with "/" ) ) }}
+
+            <a href="{{ route item.path }}" class="link{{ if active }} active{{ end }}">{{ item.details.title }}</a> | 
+
+
+        {{ end }}
+
+        <a href="https://github.com/Kaliumhexacyanoferrat/random-story-points">GitHub</a>
+
+    </div>
+
+    {{~ for script in scripts ~}}
+    <script src="{{ route script.path }}"></script>
+    {{~ end ~}}
+
+</body>
+
+</html>

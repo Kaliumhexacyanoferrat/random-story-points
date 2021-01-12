@@ -1,0 +1,28 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url('/static/fonts/Roboto-Regular.ttf');
+}
+
+body {
+    font-family: Roboto;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 1px solid #555555;
+}
+
+.footer {
+    text-align: center;
+    border-top: 1px solid #555555;
+}
+
+.content {
+    text-align: left;
+}
+
+.box {
+    max-width: 50em;
+    margin: auto;
+    padding: 3em;
+}

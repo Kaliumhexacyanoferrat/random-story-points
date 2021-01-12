@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    
+    <TargetFramework>net5.0</TargetFramework>
+
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    
+    <AssemblyTitle>random-story-points.com</AssemblyTitle>
+    <Description>The source code of the website</Description>
+    
+    <StartupObject>Project.Program</StartupObject>    
+    <OutputType>Exe</OutputType>
+    
+    <ServerGarbageCollection>true</ServerGarbageCollection>   
+    <TieredCompilation>false</TieredCompilation>
+    
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="Static\fonts\Roboto-Black.ttf" />
+    <None Remove="Static\fonts\Roboto-BlackItalic.ttf" />
+    <None Remove="Static\fonts\Roboto-Bold.ttf" />
+    <None Remove="Static\fonts\Roboto-BoldItalic.ttf" />
+    <None Remove="Static\fonts\Roboto-Italic.ttf" />
+    <None Remove="Static\fonts\Roboto-Light.ttf" />
+    <None Remove="Static\fonts\Roboto-LightItalic.ttf" />
+    <None Remove="Static\fonts\Roboto-Medium.ttf" />
+    <None Remove="Static\fonts\Roboto-MediumItalic.ttf" />
+    <None Remove="Static\fonts\Roboto-Regular.ttf" />
+    <None Remove="Static\fonts\Roboto-Thin.ttf" />
+    <None Remove="Static\fonts\Roboto-ThinItalic.ttf" />
+    <None Remove="Styles\Theme.css" />
+    <None Remove="Themes\Error.html" />
+    <None Remove="Themes\Template.html" />
+    <None Remove="Views\Index.md" />
+    <None Remove="Views\Legal.md" />
+    <None Remove="Views\Points.html" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Static\fonts\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-BlackItalic.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-BoldItalic.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Italic.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Light.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-LightItalic.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-MediumItalic.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-Thin.ttf" />
+    <EmbeddedResource Include="Static\fonts\Roboto-ThinItalic.ttf" />
+    <EmbeddedResource Include="Styles\Theme.css" />
+    <EmbeddedResource Include="Themes\Error.html" />
+    <EmbeddedResource Include="Themes\Template.html" />
+    <EmbeddedResource Include="Views\Index.md" />
+    <EmbeddedResource Include="Views\Legal.md" />
+    <EmbeddedResource Include="Views\Points.html" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    
+    <PackageReference Include="GenHTTP.Core" Version="5.1.1" />
+
+    <PackageReference Include="GenHTTP.Modules.Scriban" Version="5.1.0" />
+    <PackageReference Include="GenHTTP.Modules.Markdown" Version="5.1.0" />
+    <PackageReference Include="GenHTTP.Modules.Controllers" Version="5.1.0" />
+    <PackageReference Include="GenHTTP.Modules.Websites" Version="5.1.0" />
+    
+  </ItemGroup>
+  
+</Project>
