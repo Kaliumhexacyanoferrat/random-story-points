@@ -41,7 +41,7 @@ namespace Project.Controllers
         {
             var points = new Points("story points", STORY_POINTS[_Random.Next(0, STORY_POINTS.Length)]);
 
-            return ModScriban.Page(Resource.FromAssembly("Points.html"), (r, h) => new ViewModel<Points>(r, h, points))
+            return ModScriban.Page<ViewModel<Points>>(Resource.FromAssembly("Points.html"), (r, h) => new(new ViewModel<Points>(r, h, points)))
                              .Title("Story Points")
                              .Description("Randomly generate estimates for user stories in story points.");
         }
@@ -50,7 +50,7 @@ namespace Project.Controllers
         {
             var points = new Points(string.Empty, SHIRT_SIZES[_Random.Next(0, SHIRT_SIZES.Length)]);
 
-            return ModScriban.Page(Resource.FromAssembly("Points.html"), (r, h) => new ViewModel<Points>(r, h, points))
+            return ModScriban.Page<ViewModel<Points>>(Resource.FromAssembly("Points.html"), (r, h) => new(new ViewModel<Points>(r, h, points)))
                              .Title("T-Shirt Sizes")
                              .Description("Randomly generate estimates for user stories in t-shirt sizes.");
         }
@@ -59,7 +59,7 @@ namespace Project.Controllers
         {
             var points = new Points("days", _Random.Next(1, 300).ToString());
 
-            return ModScriban.Page(Resource.FromAssembly("Points.html"), (r, h) => new ViewModel<Points>(r, h, points))
+            return ModScriban.Page<ViewModel<Points>>(Resource.FromAssembly("Points.html"), (r, h) => new(new ViewModel<Points>(r, h, points)))
                              .Title("Person Days")
                              .Description("Randomly generate estimates for user stories in days.");
         }
